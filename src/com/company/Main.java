@@ -20,19 +20,27 @@ public class Main
 	            encryptionMethod = rand.nextInt(5);
 	            for(int i = 0; i < initialInput.length() - 1; i++)
                     {
-                        if (encryptionMethod == 0)
-                            finalString += Integer.toString(inputArray[i],2);
-                        if (encryptionMethod == 1)
-                            finalString += Integer.toString(inputArray[i],8);
-                        if (encryptionMethod == 2)
-                            finalString += Integer.toString(inputArray[i],10);
-                        if (encryptionMethod == 3)
-                            finalString += Integer.toString(inputArray[i],16);
-                        if (encryptionMethod == 4)
-                            {
-                                finalString += inputArray[i];
-                                encryptionMethod = 0;
-                            }
+                        if (encryptionMethod == 0) {
+                            finalString += Integer.toString(inputArray[i], 2);
+                            encryptionMethod++;
+                        }
+                        if (encryptionMethod == 1) {
+                            finalString += Integer.toString(inputArray[i], 8);
+                            encryptionMethod++;
+                        }
+                        if (encryptionMethod == 2) {
+                            finalString += Integer.toString(inputArray[i], 10);
+                            encryptionMethod++;
+                        }
+                        if (encryptionMethod == 3) {
+                            finalString += Integer.toString(inputArray[i], 16);
+                            encryptionMethod++;
+                        }
+                        if (encryptionMethod == 4) {
+                            finalString += inputArray[i];
+                            encryptionMethod = 0;
+                        }
+
                     }
                 System.out.println(finalString);
             }
